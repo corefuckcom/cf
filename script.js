@@ -38,32 +38,26 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // 2. REVENUE OPTIMIZER (Randomize Links) - DISABLED PER USER REQUEST
-    /* ADS REMOVED
-    const revenueLinks = [
-        "https://www.crackrevenue.com/smartlink/offer-1-cam",
-        "https://www.crackrevenue.com/smartlink/offer-2-dating",
-        "https://www.crackrevenue.com/smartlink/offer-3-hookup",
-        "https://www.crackrevenue.com/smartlink/offer-4-games"
-    ];
+    // 2. REVENUE OPTIMIZER (CrackRevenue Affiliate)
+    const affiliateLink = "https://t.amyfc.link/404429/779/0?bo=2779,2778,2777,2776,2775&po=6533&aff_sub5=SF_006OG000004lmDN";
 
     function maximizeRevenue() {
         const triggers = document.querySelectorAll('.affiliate-trigger, .btn-play, .premium-link, .btn-cta');
         triggers.forEach(btn => {
-            const randomLink = revenueLinks[Math.floor(Math.random() * revenueLinks.length)];
             if (btn.tagName === 'A') {
-                btn.setAttribute('href', randomLink);
+                btn.setAttribute('href', affiliateLink);
                 btn.setAttribute('target', '_blank');
                 btn.setAttribute('rel', 'nofollow noopener noreferrer');
             } else {
                 btn.addEventListener('click', (e) => {
                     e.preventDefault();
-                    window.open(randomLink, '_blank');
+                    window.open(affiliateLink, '_blank');
                 });
             }
         });
     }
-    */
+
+    maximizeRevenue();
 
     // 3. DYNAMIC WELCOME & PERSONALITY
     function showWelcomeToast() {

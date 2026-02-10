@@ -38,32 +38,141 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // 2. REVENUE OPTIMIZER (Randomize Links) - DISABLED PER USER REQUEST
-    /* ADS REMOVED
-    const revenueLinks = [
-        "https://www.crackrevenue.com/smartlink/offer-1-cam",
-        "https://www.crackrevenue.com/smartlink/offer-2-dating",
-        "https://www.crackrevenue.com/smartlink/offer-3-hookup",
-        "https://www.crackrevenue.com/smartlink/offer-4-games"
-    ];
+    // 2. REVENUE OPTIMIZER (CrackRevenue Affiliate) — with sub-tracking
+    const BASE_LINK = "https://t.amyfc.link/404429/779/0?bo=2779,2778,2777,2776,2775&po=6533&aff_sub5=SF_006OG000004lmDN";
+
+    function affLink(sub) {
+        return BASE_LINK + "&aff_sub=" + encodeURIComponent(sub);
+    }
+
+    function wireLink(el, sub) {
+        if (el.tagName === 'A') {
+            el.setAttribute('href', affLink(sub));
+            el.setAttribute('target', '_blank');
+            el.setAttribute('rel', 'nofollow noopener noreferrer');
+        } else {
+            el.addEventListener('click', (e) => {
+                e.preventDefault();
+                window.open(affLink(sub), '_blank');
+            });
+        }
+    }
 
     function maximizeRevenue() {
-        const triggers = document.querySelectorAll('.affiliate-trigger, .btn-play, .premium-link, .btn-cta');
-        triggers.forEach(btn => {
-            const randomLink = revenueLinks[Math.floor(Math.random() * revenueLinks.length)];
-            if (btn.tagName === 'A') {
-                btn.setAttribute('href', randomLink);
-                btn.setAttribute('target', '_blank');
-                btn.setAttribute('rel', 'nofollow noopener noreferrer');
-            } else {
-                btn.addEventListener('click', (e) => {
-                    e.preventDefault();
-                    window.open(randomLink, '_blank');
-                });
-            }
+        // Hero CTA
+        document.querySelectorAll('.btn-cta').forEach(el => wireLink(el, 'hero_cta'));
+        // Premium sidebar link
+        document.querySelectorAll('.premium-link').forEach(el => wireLink(el, 'sidebar_premium'));
+        // Character cards (use character name as sub-ID)
+        document.querySelectorAll('.char-card.affiliate-trigger').forEach(card => {
+            const name = card.querySelector('h3')?.textContent?.trim().split(' ')[0] || 'unknown';
+            wireLink(card, 'card_' + name.toLowerCase());
+        });
+        // Play buttons inside cards
+        document.querySelectorAll('.btn-play').forEach(el => {
+            const name = el.closest('.char-card')?.querySelector('h3')?.textContent?.trim().split(' ')[0] || 'unknown';
+            wireLink(el, 'play_' + name.toLowerCase());
         });
     }
-    */
+
+    maximizeRevenue();
+
+    // ── EXIT-INTENT POPUP ──────────────────────────────────────
+    let exitShown = false;
+    function showExitPopup() {
+        if (exitShown || !document.getElementById('main-content')?.style.display || document.getElementById('age-gate')) return;
+        exitShown = true;
+
+        const overlay = document.createElement('div');
+        overlay.id = 'exit-popup-overlay';
+        overlay.innerHTML = `
+            <div class="exit-popup">
+                <button class="exit-close" id="exit-close-btn">&times;</button>
+                <div class="exit-emoji">🔥</div>
+                <h2>Wait — Don't Leave Yet!</h2>
+                <p>Unlock <span style="color:#ff00ff;font-weight:800;">FREE Premium Access</span> for 24 hours. No credit card needed.</p>
+                <button class="exit-cta" id="exit-cta-btn">CLAIM FREE ACCESS →</button>
+                <p class="exit-subtext">Limited offer • 2,847 claimed today</p>
+            </div>
+        `;
+        document.body.appendChild(overlay);
+
+        // Animate in
+        requestAnimationFrame(() => overlay.classList.add('active'));
+
+        // Wire affiliate link to CTA
+        document.getElementById('exit-cta-btn').addEventListener('click', () => {
+            window.open(affLink('exit_popup'), '_blank');
+            overlay.remove();
+        });
+        document.getElementById('exit-close-btn').addEventListener('click', () => overlay.remove());
+        overlay.addEventListener('click', (e) => { if (e.target === overlay) overlay.remove(); });
+    }
+
+    // Desktop: mouse leaves viewport at top
+    document.addEventListener('mouseout', (e) => {
+        if (e.clientY <= 0) showExitPopup();
+    });
+    // Mobile: back button / visibility change fallback
+    document.addEventListener('visibilitychange', () => {
+        if (document.hidden) { /* saved for re-entry nudge */ }
+    });
+
+    // ── BANNER ADS ─────────────────────────────────────────────
+    function injectBannerAds() {
+        // Top banner — after hero
+        const hero = document.querySelector('.dashboard-hero');
+        if (hero) {
+            const topBanner = document.createElement('a');
+            topBanner.href = affLink('banner_top');
+            topBanner.target = '_blank';
+            topBanner.rel = 'nofollow noopener noreferrer';
+            topBanner.className = 'cr-banner cr-banner-top';
+            topBanner.innerHTML = `
+                <span class="banner-badge">AD</span>
+                <span class="banner-text">🔥 <strong>Meet Real Singles Near You</strong> — Join Free Now</span>
+                <span class="banner-cta">Start Chatting →</span>
+            `;
+            hero.parentNode.insertBefore(topBanner, hero.nextSibling);
+        }
+
+        // Bottom sticky banner
+        const sticky = document.createElement('a');
+        sticky.href = affLink('banner_sticky');
+        sticky.target = '_blank';
+        sticky.rel = 'nofollow noopener noreferrer';
+        sticky.className = 'cr-banner cr-banner-sticky';
+        sticky.innerHTML = `
+            <span class="banner-text">💎 <strong>Premium AI Girls</strong> — Uncensored & Waiting</span>
+            <span class="banner-cta">Try Free</span>
+            <button class="banner-dismiss" onclick="event.preventDefault();event.stopPropagation();this.closest('.cr-banner-sticky').remove();">&times;</button>
+        `;
+        document.body.appendChild(sticky);
+        // Show sticky after 5 seconds
+        setTimeout(() => sticky.classList.add('visible'), 5000);
+
+        // Mid-grid banner — after 4th card
+        const cards = document.querySelectorAll('.char-card');
+        if (cards.length >= 4) {
+            const midBanner = document.createElement('a');
+            midBanner.href = affLink('banner_mid');
+            midBanner.target = '_blank';
+            midBanner.rel = 'nofollow noopener noreferrer';
+            midBanner.className = 'cr-banner cr-banner-mid char-card';
+            midBanner.innerHTML = `
+                <div class="mid-banner-inner">
+                    <div class="mid-banner-badge">SPONSORED</div>
+                    <div class="mid-banner-icon">🎰</div>
+                    <h3>Live Cam Models</h3>
+                    <p>1000+ models online now</p>
+                    <span class="btn-play" style="pointer-events:none;">Watch Free →</span>
+                </div>
+            `;
+            cards[3].parentNode.insertBefore(midBanner, cards[4] || null);
+        }
+    }
+
+    injectBannerAds();
 
     // 3. DYNAMIC WELCOME & PERSONALITY
     function showWelcomeToast() {

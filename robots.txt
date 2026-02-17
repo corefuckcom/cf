@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /images/
+Disallow: /.git/
+
+Sitemap: https://corefuck.com/sitemap.xml

@@ -1,34 +1,32 @@
-/* COREFUCK.COM - 2050 INTERACTIVE ENGINE */
+/* COREFUCK.COM — MLM DIGITAL ASSET NETWORK ENGINE */
 document.addEventListener('DOMContentLoaded', () => {
     const ageGate = document.getElementById('age-gate');
     const mainContent = document.getElementById('main-content');
+    const earningsTicker = document.getElementById('earnings-ticker');
     const btnEnter = document.getElementById('btn-enter');
     const btnLeave = document.getElementById('btn-leave');
 
-    // 1. AGE GATE LOGIC
-    // Check localStorage (uncomment to persist)
-    // if (localStorage.getItem('ageVerified') === 'true') { enterSite(false); }
-
+    // ── 1. AGE GATE ─────────────────────────────────────────────
     btnEnter.addEventListener('click', () => {
         localStorage.setItem('ageVerified', 'true');
         enterSite(true);
-        // Trigger Welcome Sequence
         setTimeout(showWelcomeToast, 800);
     });
 
     btnLeave.addEventListener('click', () => {
         document.body.innerHTML = `
             <div style="background: #030005; height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; color: #fff; font-family: 'Outfit', sans-serif;">
-                <div style="font-size: 3rem; font-weight: 900; margin-bottom: 20px; color: #ff00ff; text-shadow: 0 0 20px #ff00ff;">
+                <div style="font-size: 3rem; font-weight: 900; margin-bottom: 20px; background: linear-gradient(135deg, #B8860B, #FFD700, #FFEC8B); background-clip: text; -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
                     COREFUCK
                 </div>
-                <p style="font-size: 1.2rem; color: #00f3ff; letter-spacing: 1px;">ACCESS DENIED: MINOR DETECTED</p>
+                <p style="font-size: 1.2rem; color: #FFD700; letter-spacing: 1px;">ACCESS DENIED: MINOR DETECTED</p>
             </div>
         `;
     });
 
     function enterSite(animate) {
         mainContent.style.display = 'block';
+        earningsTicker.style.display = 'block';
         if (animate) {
             ageGate.style.transition = 'opacity 0.6s ease';
             ageGate.style.opacity = '0';
@@ -38,8 +36,67 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // 2. REVENUE OPTIMIZER (CrackRevenue Affiliate) — with sub-tracking
-    const BASE_LINK = "https://t.amyfc.link/404429/779/0?bo=2779,2778,2777,2776,2775&po=6533&aff_sub5=SF_006OG000004lmDN";
+    // ── 2. EARNINGS TICKER ──────────────────────────────────────
+    const TICKER_ENTRIES = [
+        { emoji: '🚀', name: 'Chad B.', action: 'WTHDREW', amount: '₿ 0.45 ($28,000)' },
+        { emoji: '💎', name: 'Stacy M.', action: 'ASCENDED TO', amount: 'ILLUMINATI TIER' },
+        { emoji: '💸', name: 'Anon_99', action: 'PRINTED', amount: '$12,450.00 today' },
+        { emoji: '🔥', name: 'CryptoKing', action: 'MINTED', amount: 'NFT ASSET #442' },
+        { emoji: '🚀', name: 'AlphaMale', action: 'EXTRACTED', amount: '$9,200.00' },
+        { emoji: '💎', name: 'QueenBee', action: 'RECRUITED', amount: '400 NEW DRONES' },
+        { emoji: '💸', name: 'Wagie_No_More', action: 'QUIT JOB', amount: 'FOREVER' },
+        { emoji: '🔥', name: 'ElonFan', action: 'EARNED', amount: '$4,206.90 in 1 hour' },
+        { emoji: '🚀', name: 'ToTheMoon', action: 'BOUGHT', amount: 'LAMBO (Yellow)' },
+    ];
+
+    function buildTicker() {
+        const container = document.getElementById('ticker-content');
+        if (!container) return;
+
+        // Build entries twice for seamless loop
+        const html = TICKER_ENTRIES.map(e =>
+            `<span>${e.emoji} <strong>${e.name}</strong> ${e.action} <strong>${e.amount}</strong></span>`
+        ).join('');
+
+        container.innerHTML = html + html;
+    }
+
+    buildTicker();
+
+    // ── 2.5 SIMULATED CRYPTO MINING (FOUNDER) ───────────────────
+    function animateCrypto() {
+        const counter = document.getElementById('live-crypto-counter');
+        const netWorth = document.getElementById('founder-worth');
+        if (!counter) return;
+
+        let balance = 420.69696969;
+        let worth = 9842.21;
+
+        setInterval(() => {
+            // Random small increment
+            const increment = (Math.random() * 0.0001) + 0.00001;
+            balance += increment;
+
+            // Format to 8 decimal places for BTC look
+            counter.innerText = "₿ " + balance.toFixed(8);
+
+            // Occasionally jump the net worth
+            if (Math.random() > 0.8) {
+                worth += (Math.random() * 100);
+                if (netWorth) netWorth.innerText = "₿ " + worth.toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+            }
+
+            // Flash effect
+            counter.style.color = '#fff';
+            setTimeout(() => { counter.style.color = '#00ff00'; }, 50);
+
+        }, 100); // Super fast updates
+    }
+
+    animateCrypto();
+
+    // ── 3. AFFILIATE LINK ENGINE ────────────────────────────────
+    const BASE_LINK = "https://t.vlmai-3.com/404429/6646?aff_sub5=SF_006OG000004lmDN";
 
     function affLink(sub) {
         return BASE_LINK + "&aff_sub=" + encodeURIComponent(sub);
@@ -61,23 +118,27 @@ document.addEventListener('DOMContentLoaded', () => {
     function maximizeRevenue() {
         // Hero CTA
         document.querySelectorAll('.btn-cta').forEach(el => wireLink(el, 'hero_cta'));
-        // Premium sidebar link
-        document.querySelectorAll('.premium-link').forEach(el => wireLink(el, 'sidebar_premium'));
+        // Partner sidebar link
+        const partnerBtn = document.getElementById('become-partner-btn');
+        if (partnerBtn) wireLink(partnerBtn, 'sidebar_partner');
         // Character cards (use character name as sub-ID)
         document.querySelectorAll('.char-card.affiliate-trigger').forEach(card => {
             const name = card.querySelector('h3')?.textContent?.trim().split(' ')[0] || 'unknown';
-            wireLink(card, 'card_' + name.toLowerCase());
+            wireLink(card, 'asset_' + name.toLowerCase());
         });
-        // Play buttons inside cards
+        // Earn buttons inside cards
         document.querySelectorAll('.btn-play').forEach(el => {
             const name = el.closest('.char-card')?.querySelector('h3')?.textContent?.trim().split(' ')[0] || 'unknown';
-            wireLink(el, 'play_' + name.toLowerCase());
+            wireLink(el, 'earn_' + name.toLowerCase());
         });
+        // Recruit CTA
+        const recruitBtn = document.getElementById('recruit-cta-btn');
+        if (recruitBtn) wireLink(recruitBtn, 'recruit_cta');
     }
 
     maximizeRevenue();
 
-    // ── EXIT-INTENT POPUP ──────────────────────────────────────
+    // ── 4. EXIT-INTENT POPUP ────────────────────────────────────
     let exitShown = false;
     function showExitPopup() {
         if (exitShown || !document.getElementById('main-content')?.style.display || document.getElementById('age-gate')) return;
@@ -88,19 +149,16 @@ document.addEventListener('DOMContentLoaded', () => {
         overlay.innerHTML = `
             <div class="exit-popup">
                 <button class="exit-close" id="exit-close-btn">&times;</button>
-                <div class="exit-emoji">🔥</div>
-                <h2>Wait — Don't Leave Yet!</h2>
-                <p>Unlock <span style="color:#ff00ff;font-weight:800;">FREE Premium Access</span> for 24 hours. No credit card needed.</p>
-                <button class="exit-cta" id="exit-cta-btn">CLAIM FREE ACCESS →</button>
-                <p class="exit-subtext">Limited offer • 2,847 claimed today</p>
+                <div class="exit-emoji">💰</div>
+                <h2>Wait — You're Leaving Money on the Table!</h2>
+                <p>Join our <span style="color:#FFD700;font-weight:800;">FREE Partner Program</span> and start earning commissions on AI companion subscriptions. No fees. No risk.</p>
+                <button class="exit-cta" id="exit-cta-btn">JOIN FREE — START EARNING →</button>
+                <p class="exit-subtext">Free to join · No credit card required · Canadian compliant</p>
             </div>
         `;
         document.body.appendChild(overlay);
-
-        // Animate in
         requestAnimationFrame(() => overlay.classList.add('active'));
 
-        // Wire affiliate link to CTA
         document.getElementById('exit-cta-btn').addEventListener('click', () => {
             window.open(affLink('exit_popup'), '_blank');
             overlay.remove();
@@ -109,16 +167,11 @@ document.addEventListener('DOMContentLoaded', () => {
         overlay.addEventListener('click', (e) => { if (e.target === overlay) overlay.remove(); });
     }
 
-    // Desktop: mouse leaves viewport at top
     document.addEventListener('mouseout', (e) => {
         if (e.clientY <= 0) showExitPopup();
     });
-    // Mobile: back button / visibility change fallback
-    document.addEventListener('visibilitychange', () => {
-        if (document.hidden) { /* saved for re-entry nudge */ }
-    });
 
-    // ── BANNER ADS ─────────────────────────────────────────────
+    // ── 5. BANNER ADS ───────────────────────────────────────────
     function injectBannerAds() {
         // Top banner — after hero
         const hero = document.querySelector('.dashboard-hero');
@@ -130,8 +183,8 @@ document.addEventListener('DOMContentLoaded', () => {
             topBanner.className = 'cr-banner cr-banner-top';
             topBanner.innerHTML = `
                 <span class="banner-badge">AD</span>
-                <span class="banner-text">🔥 <strong>Meet Real Singles Near You</strong> — Join Free Now</span>
-                <span class="banner-cta">Start Chatting →</span>
+                <span class="banner-text">🔥 <strong>Earn $400+/Day</strong> — Join the #1 AI Affiliate Network Free</span>
+                <span class="banner-cta">Start Now →</span>
             `;
             hero.parentNode.insertBefore(topBanner, hero.nextSibling);
         }
@@ -143,12 +196,11 @@ document.addEventListener('DOMContentLoaded', () => {
         sticky.rel = 'nofollow noopener noreferrer';
         sticky.className = 'cr-banner cr-banner-sticky';
         sticky.innerHTML = `
-            <span class="banner-text">💎 <strong>Premium AI Girls</strong> — Uncensored & Waiting</span>
-            <span class="banner-cta">Try Free</span>
+            <span class="banner-text">💎 <strong>Build Your AI Empire</strong> — Free to join. Unlimited earning potential.</span>
+            <span class="banner-cta">Join Free</span>
             <button class="banner-dismiss" onclick="event.preventDefault();event.stopPropagation();this.closest('.cr-banner-sticky').remove();">&times;</button>
         `;
         document.body.appendChild(sticky);
-        // Show sticky after 5 seconds
         setTimeout(() => sticky.classList.add('visible'), 5000);
 
         // Mid-grid banner — after 4th card
@@ -161,11 +213,11 @@ document.addEventListener('DOMContentLoaded', () => {
             midBanner.className = 'cr-banner cr-banner-mid char-card';
             midBanner.innerHTML = `
                 <div class="mid-banner-inner">
-                    <div class="mid-banner-badge">SPONSORED</div>
-                    <div class="mid-banner-icon">🎰</div>
-                    <h3>Live Cam Models</h3>
-                    <p>1000+ models online now</p>
-                    <span class="btn-play" style="pointer-events:none;">Watch Free →</span>
+                    <div class="mid-banner-badge">PARTNER OPPORTUNITY</div>
+                    <div class="mid-banner-icon">💎</div>
+                    <h3>Become a Diamond</h3>
+                    <p>50% recurring commissions</p>
+                    <span class="btn-play" style="pointer-events:none;">Join Free →</span>
                 </div>
             `;
             cards[3].parentNode.insertBefore(midBanner, cards[4] || null);
@@ -174,98 +226,57 @@ document.addEventListener('DOMContentLoaded', () => {
 
     injectBannerAds();
 
-    // 3. DYNAMIC WELCOME & PERSONALITY
+    // ── 6. WELCOME TOAST ────────────────────────────────────────
     function showWelcomeToast() {
         const hour = new Date().getHours();
-        let greeting = "Welcome back";
-        if (hour < 5) greeting = "Late night cravings?";
-        else if (hour < 12) greeting = "Good morning, Master";
-        else if (hour < 18) greeting = "Welcome back, Master";
-        else greeting = "Ready for some fun tonight?";
+        let greeting = "Welcome to the Network";
+        if (hour < 5) greeting = "Late night hustle? Let's make money.";
+        else if (hour < 12) greeting = "Good morning, Partner. Let's build.";
+        else if (hour < 18) greeting = "Welcome back, Partner.";
+        else greeting = "Evening session. Time to earn.";
 
         const toast = document.createElement('div');
         toast.style.cssText = `
             position: fixed; bottom: 30px; right: 30px;
-            background: rgba(0,0,0,0.8); border: 1px solid #ff00ff;
+            background: rgba(0,0,0,0.9); border: 1px solid #FFD700;
             color: #fff; padding: 15px 25px; border-radius: 12px;
-            box-shadow: 0 0 30px rgba(255,0,255,0.4);
+            box-shadow: 0 0 30px rgba(255,215,0,0.3);
             transform: translateY(100px); transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             font-family: 'Outfit', sans-serif; font-weight: 600; z-index: 1000;
             display: flex; align-items: center; gap: 10px;
         `;
-        toast.innerHTML = `<span style="font-size: 1.5rem;">😈</span> <span>${greeting}</span>`;
+        toast.innerHTML = `<span style="font-size: 1.5rem;">💰</span> <span>${greeting}</span>`;
         document.body.appendChild(toast);
-
-        // Slide In
         setTimeout(() => { toast.style.transform = 'translateY(0)'; }, 100);
-        // Slide Out
         setTimeout(() => { toast.style.transform = 'translateY(150px)'; }, 5000);
     }
 
-    // 4. LIVENESS SIMULATION (Dopamine Hits)
+    // ── 7. TAB TITLE NUDGE ──────────────────────────────────────
     const originalTitle = document.title;
     document.addEventListener('visibilitychange', () => {
         if (document.hidden) {
-            document.title = "(1) New Message from Elodie... 💖";
+            document.title = "💰 You're missing out on earnings...";
         } else {
             document.title = originalTitle;
-            // Maybe play a subtle sound or flash an icon?
         }
     });
 
-    function simulateActivity() {
-        // Random "Live" status toggle
-        const statuses = document.querySelectorAll('.char-status');
-        if (statuses.length > 0) {
-            const randomStatus = statuses[Math.floor(Math.random() * statuses.length)];
-            if (Math.random() > 0.5) {
-                randomStatus.classList.remove('busy');
-                randomStatus.classList.add('online');
-                randomStatus.innerHTML = '● LIVE';
-                randomStatus.style.color = '#00ff88';
-                randomStatus.style.borderColor = '#00ff88';
-                randomStatus.style.boxShadow = '0 0 15px rgba(0,255,136,0.5)';
-            } else {
-                randomStatus.classList.remove('online');
-                randomStatus.classList.add('busy');
-                randomStatus.innerHTML = '● BUSY';
-                randomStatus.style.color = '#ff3366';
-                randomStatus.style.borderColor = '#ff3366';
-                randomStatus.style.boxShadow = '0 0 15px rgba(255,51,102,0.5)';
-            }
-        }
-    }
-
-    // Pulse random sidebar icons
-    function pulseSidebar() {
-        const links = document.querySelectorAll('.sidebar-menu a');
-        if (links.length > 0) {
-            const randomLink = links[Math.floor(Math.random() * links.length)];
-            randomLink.style.transition = 'text-shadow 0.3s';
-            randomLink.style.textShadow = '0 0 10px #ff00ff';
-            setTimeout(() => { randomLink.style.textShadow = 'none'; }, 1000);
-        }
-    }
-
-    setInterval(simulateActivity, 2500);
-    setInterval(pulseSidebar, 8000);
-
-    // 5. FILTERING
+    // ── 8. CATEGORY FILTERING ───────────────────────────────────
     const filterButtons = document.querySelectorAll('.cat-pill');
-    const cards = document.querySelectorAll('.char-card');
+    const allCards = document.querySelectorAll('.char-card:not(.cr-banner-mid)');
 
     filterButtons.forEach(btn => {
         btn.addEventListener('click', () => {
             filterButtons.forEach(b => b.classList.remove('active'));
             btn.classList.add('active');
             const filterValue = btn.getAttribute('data-filter');
-            cards.forEach(card => {
+            allCards.forEach(card => {
                 const category = card.getAttribute('data-category');
+                if (!category) return;
                 if (filterValue === 'all' || category.includes(filterValue)) {
                     card.style.display = 'block';
-                    // Add pop-in animation
                     card.style.animation = 'none';
-                    card.offsetHeight; /* trigger reflow */
+                    card.offsetHeight;
                     card.style.animation = 'float 0.5s ease-out';
                 } else {
                     card.style.display = 'none';

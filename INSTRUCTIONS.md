@@ -19,14 +19,16 @@ You need "Adult Friendly" services. **Do not use standard hosts** (like Bluehost
 The code is ready. Now you need to put your "stuff" in it.
 
 - [ ] **Generate/Download Images**:
-  - You need 5 placeholder images for the girls.
-  - Name them: `elodie.jpg`, `mila.jpg`, `isabella.jpg`, `olivia.jpg`, `luna.jpg`.
-  - Put them in the project folder.
+  - You need 12 images for the characters.
+  - See `IMAGE_PROMPTS.md` for specific AI prompts to generate these.
+  - Name them: `c1.jpg` to `c12.jpg` (matching the characters in `index.html`).
+  - Put them in the `images/` folder, replacing the current placeholders.
 - [ ] **Update Image Code**:
-  - In `index.html`, replace `<div class="p1">...</div>` with `<img src="elodie.jpg">`.
+  - *Already done!* `index.html` is pre-configured to look for `images/c1.jpg` through `images/c12.jpg`.
 - [ ] **Add Your Money Links**:
   - Open `script.js`.
-  - Replace the "test" links with your **CrackRevenue Smartlinks**.
+  - Look for `const BASE_LINK`.
+  - Replace the current link with your actual **CrackRevenue Smartlink**.
 
 ## 🚀 3. Deployment (Go Live)
 - [ ] **Upload Files**:

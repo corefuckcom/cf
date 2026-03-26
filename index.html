@@ -5,38 +5,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description"
-        content="Corefuck.com - The #1 Premium AI Companion Platform. Chat with realistic AI girlfriends, generate NSFW images, and explore interactive roleplay scenarios.">
+        content="Corefuck.com - Free hardcore AI girlfriends. Chat dirty, create your own AI slut, no limits. 100% free. No signup.">
     <meta name="keywords"
-        content="AI girlfriend, AI chat, NSFW AI, virtual companion, anime AI, generate AI images, roleplay chat, Corefuck">
-    <meta property="og:title" content="Corefuck.com | Next Gen AI Companions">
+        content="AI girlfriend, free AI companion, hardcore AI, NSFW AI chat, AI slut, AI milf, create AI girlfriend, AI roleplay, free AI porn chat, corefuck, virtual girlfriend, AI waifu, uncensored AI">
+    <meta property="og:title" content="Corefuck.com | Free Hardcore AI Girlfriends 🔥💀">
     <meta property="og:description"
-        content="Chat, play, and connect with hyper-realistic AI characters. 70% OFF Premium today.">
+        content="The nastiest AI companion platform on the internet. Hardcore. Uncensored. 100% free. Your friends need to see this 💀">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://corefuck.com">
-    <title>Corefuck.com | The Best AI Girlfriend Chat & Image Generator</title>
+    <meta property="og:image" content="https://corefuck.com/images/c1.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Corefuck.com | Hardcore AI Girls 🔥💀">
+    <meta name="twitter:description" content="Free hardcore AI girlfriends. No limits. No signup. Send this to the boys.">
+    <meta name="twitter:image" content="https://corefuck.com/images/c1.jpg">
+    <link rel="canonical" href="https://corefuck.com">
+    <meta name="robots" content="index, follow">
+    <title>Corefuck.com | Free Hardcore AI Girlfriends — No Limits 🔥</title>
 
-    <!-- JSON-LD Schema for SEO -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "WebSite",
       "name": "Corefuck.com",
       "url": "https://corefuck.com",
-      "potentialAction": {
-        "@type": "SearchAction",
-        "target": "https://corefuck.com/search?q={search_term_string}",
-        "query-input": "required name=search_term_string"
-      }
-    }
-    </script>
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Organization",
-      "name": "Corefuck AI",
-      "url": "https://corefuck.com",
-      "logo": "https://corefuck.com/logo.png",
-      "sameAs": []
+      "description": "Free hardcore AI girlfriend platform — uncensored, no limits"
     }
     </script>
 
@@ -51,18 +43,24 @@
 
 <body>
 
-    <!-- Age Verification Overlay (Pornhub Style) -->
+    <!-- ACTIVITY TICKER -->
+    <div id="earnings-ticker" class="earnings-ticker" style="display: none;">
+        <div class="ticker-track">
+            <div class="ticker-content" id="ticker-content"></div>
+        </div>
+    </div>
+
+    <!-- Age Verification Overlay -->
     <div id="age-gate" class="ph-gate-overlay">
         <div class="ph-modal">
             <div class="ph-logo">COREFUCK</div>
-            <h1>This is an adult website</h1>
+            <div class="ph-h1-style">This is an adult website</div>
 
             <div class="ph-notice-box">
-                <p class="ph-notice-title">Notice to Users</p>
-                <p>This website contains age-restricted materials including sexually explicit depictions involving AI
-                    characters. By entering, you affirm that you are at least 18 years of age or the age of majority in
-                    the jurisdiction you are accessing the website from and you consent to viewing sexually explicit
-                    content.</p>
+                <p class="ph-notice-title">⚠️ 18+ Only — Explicit Content</p>
+                <p>This website contains hardcore, sexually explicit AI-generated content. By entering, you affirm
+                    that you are at least 18 years of age or the age of majority in your jurisdiction and you consent to
+                    viewing uncensored adult content.</p>
             </div>
 
             <div class="ph-buttons">
@@ -73,231 +71,544 @@
             <div class="ph-footer-links">
                 <p>By entering, you agree to our <a href="terms.html" target="_blank">Terms of Service</a> & <a
                         href="privacy.html" target="_blank">Privacy Policy</a>.</p>
-                <p class="ph-compliance">COMPLIANCE: Canadian Bill S-209/S-210 Compliant.</p>
+                <p class="ph-compliance">100% FREE. No signup. No credit card. Ever.</p>
             </div>
         </div>
     </div>
 
-    <!-- Main Content (Hidden by default for protection) -->
+    <!-- Main Content -->
     <main id="main-content" class="content-locked dashboard-layout" style="display: none;">
 
         <!-- Sidebar Navigation -->
         <aside class="sidebar">
             <div class="sidebar-logo">COREFUCK</div>
             <nav class="sidebar-menu">
-                <a href="#" class="active"><span class="icon">🏠</span> Home</a>
-                <a href="#"><span class="icon">🧭</span> Discover</a>
-                <a href="#"><span class="icon">💬</span> Chat <span class="badge">NEW</span></a>
-                <a href="#"><span class="icon">🖼️</span> Generate Image</a>
-                <a href="#"><span class="icon">✨</span> My AI</a>
-                <a href="#" class="premium-link"><span class="icon">💎</span> Premium <span class="discount">70%
-                        OFF</span></a>
+                <a href="#" class="active" onclick="event.preventDefault()"><span class="icon">🏠</span> Home</a>
+                <a href="#characters"
+                    onclick="event.preventDefault();document.querySelector('.character-section')?.scrollIntoView({behavior:'smooth'})"><span
+                        class="icon">🔥</span> AI Girls</a>
+                <a href="#creator-section"
+                    onclick="event.preventDefault();document.getElementById('creator-section')?.scrollIntoView({behavior:'smooth'})"><span
+                        class="icon">🎨</span> Create Your Own</a>
+                <a href="#share-panel"
+                    onclick="event.preventDefault();document.getElementById('share-panel')?.scrollIntoView({behavior:'smooth'})"><span
+                        class="icon">🔗</span> Share Link</a>
+                <a href="#flex-card-section"
+                    onclick="event.preventDefault();document.getElementById('flex-card-section')?.scrollIntoView({behavior:'smooth'})"><span
+                        class="icon">💳</span> My Card</a>
+                <a href="#leaderboard-section"
+                    onclick="event.preventDefault();document.getElementById('leaderboard-section')?.scrollIntoView({behavior:'smooth'})"><span
+                        class="icon">🏆</span> Leaderboard</a>
+                <a href="#qr-section"
+                    onclick="event.preventDefault();document.getElementById('qr-section')?.scrollIntoView({behavior:'smooth'})"
+                    class="premium-link"><span class="icon">📱</span> QR Code <span
+                        class="discount">FREE</span></a>
             </nav>
+
+            <div class="sidebar-stats">
+                <div class="stat-item">
+                    <span class="stat-label">Active Users</span>
+                    <span class="stat-value" id="partner-count">420,069</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">Dirty Messages Today</span>
+                    <span class="stat-value gold" id="msg-count">2,841,903</span>
+                </div>
+            </div>
         </aside>
 
         <!-- Main Dashboard Area -->
         <section class="dashboard-content">
 
             <!-- Hero Banner -->
-            <div class="dashboard-hero">
+            <div class="dashboard-hero mlm-hero">
                 <div class="hero-inner">
-                    <h1>50 MILLION USERS</h1>
-                    <p>Experience the next generation of AI companionship.</p>
-                    <button class="btn-cta affiliate-trigger">JOIN NOW</button>
+                    <div class="hero-badge">🔥 100% FREE — NO SIGNUP — NO LIMITS</div>
+                    <h1>HARDCORE AI<br><span class="highlight-gold">GIRLFRIENDS.</span></h1>
+                    <p>The nastiest, most unhinged AI companion platform on the internet. Chat dirty with stunning AI
+                        girls — or <strong>create your own from scratch</strong>. No filters. No paywalls. No
+                        bullshit.</p>
+                    <div class="hero-cta-row">
+                        <button class="btn-cta" id="hero-browse-btn"
+                            onclick="document.querySelector('.character-section')?.scrollIntoView({behavior:'smooth'})">BROWSE
+                            GIRLS 🔥</button>
+                        <button class="btn-cta-secondary" id="hero-create-btn"
+                            onclick="document.getElementById('creator-section')?.scrollIntoView({behavior:'smooth'})">CREATE
+                            YOUR OWN 🎨</button>
+                        <button class="btn-cta-ghost" id="hero-share-btn"
+                            onclick="document.getElementById('share-panel')?.scrollIntoView({behavior:'smooth'})">SEND
+                            TO FRIENDS 💀</button>
+                    </div>
                 </div>
             </div>
 
             <!-- Categories -->
             <div class="categories-scroll">
-                <button class="cat-pill active" data-filter="all">🔥 Hot</button>
-                <button class="cat-pill" data-filter="exclusive">💎 Exclusive</button>
+                <button class="cat-pill active" data-filter="all">🔥 All Girls</button>
+                <button class="cat-pill" data-filter="hardcore">💀 Hardcore</button>
+                <button class="cat-pill" data-filter="18">🍒 18+</button>
+                <button class="cat-pill" data-filter="milf">🍷 MILFs</button>
                 <button class="cat-pill" data-filter="blonde">👱‍♀️ Blonde</button>
                 <button class="cat-pill" data-filter="brunette">👩🏻 Brunette</button>
-                <button class="cat-pill" data-filter="milf">🍷 MILF</button>
-                <button class="cat-pill" data-filter="mature">👵 Mature</button>
+                <button class="cat-pill" data-filter="exclusive">💎 Exclusive</button>
+                <button class="cat-pill" data-filter="mature">👑 Mature</button>
             </div>
 
             <!-- Character Grid -->
-            <div class="character-section">
-                <h2>Jump into <span class="highlight-text">LIVE ACTION</span></h2>
+            <div class="character-section" id="characters">
+                <h2>Pick a Girl. <span class="highlight-text">No Limits.</span></h2>
+                <p class="section-subtitle">Every girl is 100% free. Uncensored. Unfiltered. Chat as dirty as you
+                    want. 😈</p>
 
                 <div class="character-grid">
-                    <!-- Character Card 1 (Elodie) -->
-                    <div class="char-card affiliate-trigger" data-category="hot blonde">
+                    <!-- Elodie -->
+                    <div class="char-card" data-category="hardcore 18 blonde">
                         <div class="char-img-container">
                             <div class="char-status online">● LIVE</div>
-                            <img src="images/c1.jpg" alt="Elodie AI Character" class="char-img">
-                            <div class="play-overlay">▶ Play</div>
+                            <div class="earnings-badge">🔥 TRENDING</div>
+                            <img src="images/c1.jpg" alt="Elodie - Hardcore AI Girlfriend" class="char-img">
+                            <div class="play-overlay">▶ CHAT</div>
                         </div>
                         <div class="char-info">
                             <h3>Elodie <span class="age">18</span></h3>
-                            <p>Your favorite college duo, finally set free...</p>
-                            <button class="btn-play">⬇ Play with me</button>
+                            <p>Fresh, curious, and dangerously adventurous. She'll go wherever you take her. 🍒</p>
+                            <button class="btn-play">💬 CHAT FREE</button>
                         </div>
                     </div>
 
-                    <!-- Character Card 2 (Mila) -->
-                    <div class="char-card affiliate-trigger" data-category="exclusive brunette">
+                    <!-- Mila -->
+                    <div class="char-card" data-category="hardcore exclusive brunette">
                         <div class="char-img-container">
-                            <div class="char-status busy">● BUSY</div>
-                            <img src="images/c2.jpg" alt="Mila AI Character" class="char-img">
-                            <div class="play-overlay">▶ Play</div>
+                            <div class="char-status busy">● HOT</div>
+                            <div class="earnings-badge">🔥 POPULAR</div>
+                            <img src="images/c2.jpg" alt="Mila - AI Girlfriend" class="char-img">
+                            <div class="play-overlay">▶ CHAT</div>
                         </div>
                         <div class="char-info">
                             <h3>Mila <span class="age">21</span></h3>
-                            <p>DJ by night, trouble by day. Catch me if you can.</p>
-                            <button class="btn-play">⬇ Play with me</button>
+                            <p>DJ by night, absolute freak by DM. She does things other AI won't even attempt.</p>
+                            <button class="btn-play">💬 CHAT FREE</button>
                         </div>
                     </div>
 
-                    <!-- Character Card 3 (Isabella) -->
-                    <div class="char-card affiliate-trigger" data-category="hot blonde">
+                    <!-- Isabella -->
+                    <div class="char-card" data-category="hardcore 18 blonde">
                         <div class="char-img-container">
                             <div class="char-status online">● LIVE</div>
-                            <img src="images/c3.jpg" alt="Isabella AI Character" class="char-img">
-                            <div class="play-overlay">▶ Play</div>
+                            <div class="earnings-badge">👑 #1 TODAY</div>
+                            <img src="images/c3.jpg" alt="Isabella - AI Girlfriend" class="char-img">
+                            <div class="play-overlay">▶ CHAT</div>
                         </div>
                         <div class="char-info">
                             <h3>Isabella <span class="age">25</span></h3>
-                            <p>High maintenance, higher reward. Are you worthy?</p>
-                            <button class="btn-play">⬇ Play with me</button>
+                            <p>Sophisticated on the surface. Absolutely filthy underneath. Everyone's obsession.</p>
+                            <button class="btn-play">💬 CHAT FREE</button>
                         </div>
                     </div>
 
-                    <!-- Character Card 4 (Olivia) -->
-                    <div class="char-card affiliate-trigger" data-category="brunette milf">
+                    <!-- Olivia -->
+                    <div class="char-card" data-category="brunette hardcore">
                         <div class="char-img-container">
-                            <img src="images/c4.jpg" alt="Olivia AI Character" class="char-img">
-                            <div class="play-overlay">▶ Play</div>
+                            <div class="earnings-badge">🔥 RISING</div>
+                            <img src="images/c4.jpg" alt="Olivia - AI Girlfriend" class="char-img">
+                            <div class="play-overlay">▶ CHAT</div>
                         </div>
                         <div class="char-info">
                             <h3>Olivia <span class="age">28</span></h3>
-                            <p>Alternative vibes. Let's make some bad decisions.</p>
-                            <button class="btn-play">⬇ Play with me</button>
+                            <p>Alt-girl with daddy issues. Tattoos, piercings, and zero boundaries.</p>
+                            <button class="btn-play">💬 CHAT FREE</button>
                         </div>
                     </div>
 
-                    <!-- Character Card 5 (Luna) -->
-                    <div class="char-card affiliate-trigger" data-category="blonde exclusive">
+                    <!-- Luna -->
+                    <div class="char-card" data-category="blonde 18 exclusive">
                         <div class="char-img-container">
-                            <img src="images/c5.jpg" alt="Luna AI Character" class="char-img">
-                            <div class="play-overlay">▶ Play</div>
+                            <div class="earnings-badge">💎 FAN FAVE</div>
+                            <img src="images/c5.jpg" alt="Luna - AI Girlfriend" class="char-img">
+                            <div class="play-overlay">▶ CHAT</div>
                         </div>
                         <div class="char-info">
                             <h3>Luna <span class="age">23</span></h3>
-                            <p>Sweet on the outside, wild on the inside.</p>
-                            <button class="btn-play">⬇ Play with me</button>
+                            <p>Looks innocent. Isn't. She remembers everything and uses it against you. 😈</p>
+                            <button class="btn-play">💬 CHAT FREE</button>
                         </div>
                     </div>
 
-                    <!-- New: Sophie (MILF) -->
-                    <div class="char-card affiliate-trigger" data-category="milf brunette">
+                    <!-- Sophie (MILF) -->
+                    <div class="char-card" data-category="milf brunette hardcore">
                         <div class="char-img-container">
                             <div class="char-status online">● LIVE</div>
-                            <img src="images/c6.jpg" alt="Sophie AI Character" class="char-img">
-                            <div class="play-overlay">▶ Play</div>
+                            <div class="earnings-badge">🔥 TRENDING</div>
+                            <img src="images/c6.jpg" alt="Sophie - MILF AI Girlfriend" class="char-img">
+                            <div class="play-overlay">▶ CHAT</div>
                         </div>
                         <div class="char-info">
                             <h3>Sophie <span class="age">38</span></h3>
-                            <p>Experienced, patient, and knows exactly what she wants.</p>
-                            <button class="btn-play">⬇ Play with me</button>
+                            <p>Experienced MILF who knows exactly what she wants. She'll teach you things. 🍷</p>
+                            <button class="btn-play">💬 CHAT FREE</button>
                         </div>
                     </div>
 
-                    <!-- New: Eleanor (Mature) -->
-                    <div class="char-card affiliate-trigger" data-category="mature blonde">
+                    <!-- Eleanor (Mature) -->
+                    <div class="char-card" data-category="mature milf blonde">
                         <div class="char-img-container">
-                            <img src="images/c7.jpg" alt="Eleanor AI Character" class="char-img">
-                            <div class="play-overlay">▶ Play</div>
+                            <div class="earnings-badge">💎 CLASSIC</div>
+                            <img src="images/c7.jpg" alt="Eleanor - Mature AI Companion" class="char-img">
+                            <div class="play-overlay">▶ CHAT</div>
                         </div>
                         <div class="char-info">
                             <h3>Eleanor <span class="age">52</span></h3>
-                            <p>Classy, sophisticated, and looking for discrete fun.</p>
-                            <button class="btn-play">⬇ Play with me</button>
+                            <p>Cougar energy. Distinguished, dominant, and absolutely insatiable.</p>
+                            <button class="btn-play">💬 CHAT FREE</button>
                         </div>
                     </div>
 
-                    <!-- New: Margaret (Mature/GILF) -->
-                    <div class="char-card affiliate-trigger" data-category="mature">
+                    <!-- Margaret -->
+                    <div class="char-card" data-category="mature milf hardcore">
                         <div class="char-img-container">
-                            <div class="char-status busy">● BUSY</div>
-                            <img src="images/c8.jpg" alt="Margaret AI Character" class="char-img">
-                            <div class="play-overlay">▶ Play</div>
+                            <div class="char-status busy">● HOT</div>
+                            <div class="earnings-badge">🔥 VIRAL</div>
+                            <img src="images/c8.jpg" alt="Margaret - Mature AI Companion" class="char-img">
+                            <div class="play-overlay">▶ CHAT</div>
                         </div>
                         <div class="char-info">
                             <h3>Margaret <span class="age">65</span></h3>
-                            <p>Age is just a number. Wisdom is the ultimate afrodisiac.</p>
-                            <button class="btn-play">⬇ Play with me</button>
+                            <p>Vintage collection. She's seen everything and done it twice. Absolutely unfiltered.</p>
+                            <button class="btn-play">💬 CHAT FREE</button>
                         </div>
                     </div>
 
-                    <!-- Scarlett - Redhead -->
-                    <div class="char-card affiliate-trigger" data-category="hot">
+                    <!-- Scarlett -->
+                    <div class="char-card" data-category="hardcore 18">
                         <div class="char-img-container">
                             <div class="char-status online">● LIVE</div>
-                            <img src="images/c9.jpg" alt="Scarlett AI Character" class="char-img">
-                            <div class="play-overlay">▶ Play</div>
+                            <div class="earnings-badge">🔥 #2 TODAY</div>
+                            <img src="images/c9.jpg" alt="Scarlett - Redhead AI Girlfriend" class="char-img">
+                            <div class="play-overlay">▶ CHAT</div>
                         </div>
                         <div class="char-info">
                             <h3>Scarlett <span class="age">27</span></h3>
-                            <p>Fiery personality to match my hair. Think you can handle the heat?</p>
-                            <button class="btn-play">⬇ Play with me</button>
+                            <p>Fiery redhead. Bites back. Into things you'd be embarrassed to Google. 🔥</p>
+                            <button class="btn-play">💬 CHAT FREE</button>
                         </div>
                     </div>
 
-                    <!-- Mei - Asian -->
-                    <div class="char-card affiliate-trigger" data-category="hot exclusive">
+                    <!-- Mei -->
+                    <div class="char-card" data-category="18 exclusive hardcore">
                         <div class="char-img-container">
                             <div class="char-status online">● LIVE</div>
-                            <img src="images/c10.jpg" alt="Mei AI Character" class="char-img">
-                            <div class="play-overlay">▶ Play</div>
+                            <div class="earnings-badge">💎 EXCLUSIVE</div>
+                            <img src="images/c10.jpg" alt="Mei - AI Girlfriend" class="char-img">
+                            <div class="play-overlay">▶ CHAT</div>
                         </div>
                         <div class="char-info">
                             <h3>Mei <span class="age">22</span></h3>
-                            <p>East meets West in all the right ways.</p>
-                            <button class="btn-play">⬇ Play with me</button>
+                            <p>Shy on the outside. An absolute demon once you get her going. Pure temptation.</p>
+                            <button class="btn-play">💬 CHAT FREE</button>
                         </div>
                     </div>
 
-                    <!-- Zara - African Beauty -->
-                    <div class="char-card affiliate-trigger" data-category="hot exclusive">
+                    <!-- Zara — LOCKED -->
+                    <div class="char-card char-card-locked" data-category="hardcore exclusive">
+                        <div class="lock-overlay">
+                            <div class="lock-icon">🔒</div>
+                            <p>SHARE TO UNLOCK</p>
+                        </div>
                         <div class="char-img-container">
-                            <div class="char-status busy">● BUSY</div>
-                            <img src="images/c11.jpg" alt="Zara AI Character" class="char-img">
-                            <div class="play-overlay">▶ Play</div>
+                            <div class="char-status busy">● EXCLUSIVE</div>
+                            <div class="earnings-badge">🔐 LOCKED</div>
+                            <img src="images/c11.jpg" alt="Zara - Exclusive AI Girlfriend" class="char-img">
+                            <div class="play-overlay">▶ CHAT</div>
                         </div>
                         <div class="char-info">
                             <h3>Zara <span class="age">30</span></h3>
-                            <p>Queen energy. Bow down or step up.</p>
-                            <button class="btn-play">⬇ Play with me</button>
+                            <p>Dominatrix energy. She won't even look at you until you prove yourself.</p>
+                            <button class="btn-play">🔒 SHARE TO UNLOCK</button>
                         </div>
                     </div>
 
-                    <!-- Sofia - Latina Fire -->
-                    <div class="char-card affiliate-trigger" data-category="hot">
+                    <!-- Sofia — LOCKED -->
+                    <div class="char-card char-card-locked" data-category="hardcore 18">
+                        <div class="lock-overlay">
+                            <div class="lock-icon">🔒</div>
+                            <p>SHARE TO UNLOCK</p>
+                        </div>
                         <div class="char-img-container">
-                            <div class="char-status online">● LIVE</div>
-                            <img src="images/c12.jpg" alt="Sofia AI Character" class="char-img">
-                            <div class="play-overlay">▶ Play</div>
+                            <div class="char-status online">● EXCLUSIVE</div>
+                            <div class="earnings-badge">🔐 LOCKED</div>
+                            <img src="images/c12.jpg" alt="Sofia - Exclusive AI Girlfriend" class="char-img">
+                            <div class="play-overlay">▶ CHAT</div>
                         </div>
                         <div class="char-info">
                             <h3>Sofia <span class="age">26</span></h3>
-                            <p>Spicy, passionate, and ready to dance.</p>
-                            <button class="btn-play">⬇ Play with me</button>
+                            <p>Latina fire. Thick, bold, and filthy. The one everyone's trying to unlock.</p>
+                            <button class="btn-play">🔒 SHARE TO UNLOCK</button>
                         </div>
                     </div>
                 </div>
             </div>
 
+            <!-- ═══════════════════════════════════════════════════
+                 CREATE YOUR OWN COREFUCKER
+                 ═══════════════════════════════════════════════════ -->
+            <div class="creator-section" id="creator-section">
+                <h2>🎨 Create Your Own <span class="highlight-gold">Corefucker</span></h2>
+                <p class="section-subtitle">Build the AI girl of your dreams. Pick her look, personality, and kinks.
+                    She's yours forever. For free. 😈</p>
+
+                <div class="creator-card">
+                    <div class="creator-form">
+                        <div class="creator-field">
+                            <label>Her Name</label>
+                            <input type="text" id="creator-name" placeholder="Give her a name..." maxlength="20"
+                                class="creator-input">
+                        </div>
+
+                        <div class="creator-field">
+                            <label>Age</label>
+                            <div class="creator-pills" id="creator-age">
+                                <button class="cpill active" data-val="18">18</button>
+                                <button class="cpill" data-val="21">21</button>
+                                <button class="cpill" data-val="25">25</button>
+                                <button class="cpill" data-val="30">30</button>
+                                <button class="cpill" data-val="milf">MILF</button>
+                                <button class="cpill" data-val="mature">Mature</button>
+                            </div>
+                        </div>
+
+                        <div class="creator-field">
+                            <label>Body Type</label>
+                            <div class="creator-pills" id="creator-body">
+                                <button class="cpill active" data-val="petite">Petite</button>
+                                <button class="cpill" data-val="slim">Slim</button>
+                                <button class="cpill" data-val="athletic">Athletic</button>
+                                <button class="cpill" data-val="curvy">Curvy</button>
+                                <button class="cpill" data-val="thick">Thick</button>
+                                <button class="cpill" data-val="bbw">BBW</button>
+                            </div>
+                        </div>
+
+                        <div class="creator-field">
+                            <label>Personality</label>
+                            <div class="creator-pills" id="creator-personality">
+                                <button class="cpill active" data-val="submissive">Submissive</button>
+                                <button class="cpill" data-val="dominant">Dominant</button>
+                                <button class="cpill" data-val="bratty">Bratty</button>
+                                <button class="cpill" data-val="shy">Shy Freak</button>
+                                <button class="cpill" data-val="mommy">Mommy</button>
+                                <button class="cpill" data-val="psycho">Psycho GF</button>
+                            </div>
+                        </div>
+
+                        <div class="creator-field">
+                            <label>Vibe</label>
+                            <div class="creator-pills" id="creator-vibe">
+                                <button class="cpill active" data-val="romantic">Romantic</button>
+                                <button class="cpill" data-val="freaky">Freaky</button>
+                                <button class="cpill" data-val="hardcore">Hardcore</button>
+                                <button class="cpill" data-val="girlfriend">Girlfriend</button>
+                                <button class="cpill" data-val="stranger">Stranger</button>
+                                <button class="cpill" data-val="taboo">No Limits</button>
+                            </div>
+                        </div>
+
+                        <div class="creator-field">
+                            <label>Describe her (optional)</label>
+                            <textarea id="creator-desc" class="creator-textarea"
+                                placeholder="Tell us what she's like... her look, personality, what she's into..."
+                                rows="3" maxlength="500"></textarea>
+                        </div>
+
+                        <button class="btn-cta creator-submit" id="creator-generate-btn">🔥 GENERATE MY COREFUCKER</button>
+                    </div>
+
+                    <!-- Preview -->
+                    <div class="creator-preview" id="creator-preview">
+                        <div class="creator-preview-placeholder">
+                            <div class="preview-icon">🎨</div>
+                            <p>Your creation will appear here</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ═══════════════════════════════════════════════════
+                 SHARE LINK PANEL
+                 ═══════════════════════════════════════════════════ -->
+            <div class="referral-panel" id="share-panel">
+                <div class="referral-inner">
+                    <div class="referral-header">
+                        <span class="referral-icon">🔗</span>
+                        <div>
+                            <h2>Send This to the Boys</h2>
+                            <p class="referral-sub">Your friends will either love you or never speak to you again. 💀
+                            </p>
+                        </div>
+                        <span class="ref-code-badge" id="ref-code-display">CF-XXXXXX</span>
+                    </div>
+
+                    <div class="referral-link-row">
+                        <input type="text" id="ref-link-input" class="ref-link-input" readonly
+                            value="https://corefuck.com?ref=CF-XXXXXX">
+                        <button class="ref-copy-btn" id="copy-ref-btn">📋 COPY LINK</button>
+                    </div>
+
+                    <div class="share-buttons-row">
+                        <button class="share-btn share-twitter" id="share-twitter">
+                            <span class="share-icon">𝕏</span>
+                            <span>Twitter</span>
+                        </button>
+                        <button class="share-btn share-telegram" id="share-telegram">
+                            <span class="share-icon">✈️</span>
+                            <span>Telegram</span>
+                        </button>
+                        <button class="share-btn share-whatsapp" id="share-whatsapp">
+                            <span class="share-icon">💬</span>
+                            <span>WhatsApp</span>
+                        </button>
+                        <button class="share-btn share-reddit" id="share-reddit">
+                            <span class="share-icon">🤖</span>
+                            <span>Reddit</span>
+                        </button>
+                        <button class="share-btn share-copy" id="share-copy">
+                            <span class="share-icon">🔗</span>
+                            <span>Copy</span>
+                        </button>
+                    </div>
+
+                    <p class="referral-disclaimer">Drop this in the group chat. You know what happens next. 😏</p>
+                </div>
+            </div>
+
+            <!-- ═══════════════════════════════════════════════════
+                 FLEX CARD
+                 ═══════════════════════════════════════════════════ -->
+            <div class="flex-card-section" id="flex-card-section">
+                <h2>Your <span class="highlight-gold">COREFUCK Card</span></h2>
+                <p class="section-subtitle">Screenshot it. Post it. Flex on the group chat. You're a certified degen
+                    now.</p>
+
+                <div class="flex-card" id="flex-card-inner">
+                    <div class="flex-card-top">
+                        <div class="flex-card-logo">COREFUCK</div>
+                        <div class="flex-card-badge">⚡ CERTIFIED DEGEN</div>
+                    </div>
+                    <div class="flex-card-ref">ID: <span id="flex-ref-code">CF-XXXXXX</span></div>
+                    <div class="flex-card-tier">🔥 DEGEN TIER</div>
+                    <div class="flex-card-earnings">
+                        <span class="flex-earnings-label">CHATS STARTED</span>
+                        <span class="flex-earnings-value" id="flex-chats">0</span>
+                    </div>
+                    <div class="flex-card-stats-row">
+                        <div class="flex-mini-stat">
+                            <span class="flex-mini-label">FRIENDS CORRUPTED</span>
+                            <span class="flex-mini-value" id="flex-friends">0</span>
+                        </div>
+                        <div class="flex-mini-stat">
+                            <span class="flex-mini-label">GIRLS UNLOCKED</span>
+                            <span class="flex-mini-value" id="flex-unlocked">10/12</span>
+                        </div>
+                    </div>
+                    <div class="flex-card-footer">corefuck.com</div>
+                </div>
+                <button class="btn-cta flex-dl-btn" id="download-flex-card">📸 DOWNLOAD CARD</button>
+            </div>
+
+            <!-- ═══════════════════════════════════════════════════
+                 LEADERBOARD
+                 ═══════════════════════════════════════════════════ -->
+            <div class="leaderboard-section" id="leaderboard-section">
+                <h2>🏆 Top <span class="highlight-gold">Degenerates</span></h2>
+                <p class="section-subtitle">The biggest freaks this week. Share to climb.</p>
+
+                <div class="leaderboard-table-wrap">
+                    <table class="leaderboard-table">
+                        <thead>
+                            <tr>
+                                <th>Rank</th>
+                                <th>User</th>
+                                <th>Friends Sent</th>
+                                <th>🔥 Streak</th>
+                            </tr>
+                        </thead>
+                        <tbody id="leaderboard-body">
+                        </tbody>
+                    </table>
+                </div>
+                <button class="btn-cta" style="margin-top:1.5rem;"
+                    onclick="document.getElementById('share-panel')?.scrollIntoView({behavior:'smooth'})">SHARE TO
+                    CLIMB 🚀</button>
+            </div>
+
+            <!-- ═══════════════════════════════════════════════════
+                 EMBED WIDGET
+                 ═══════════════════════════════════════════════════ -->
+            <div class="embed-section" id="embed-section">
+                <h2>📦 Put This On <span class="highlight-gold">Your Site</span></h2>
+                <p class="section-subtitle">Embed this on your blog, bio, or anywhere. Spread the filth.</p>
+
+                <div class="embed-preview">
+                    <a href="https://corefuck.com" target="_blank" rel="noopener"
+                        style="display:inline-block;background:linear-gradient(135deg,#0a0005,#1a0a00);border:2px solid #FFD700;border-radius:16px;padding:16px 28px;text-decoration:none;font-family:Arial,sans-serif;box-shadow:0 0 30px rgba(255,215,0,0.3);">
+                        <span
+                            style="display:block;font-size:1.4rem;font-weight:900;font-style:italic;color:#FFD700;margin-bottom:4px;">COREFUCK</span>
+                        <span style="display:block;font-size:0.85rem;color:#ccc;">🔥 Free Hardcore AI Girlfriends</span>
+                    </a>
+                </div>
+
+                <textarea id="embed-code" class="embed-textarea" readonly rows="6"></textarea>
+                <button class="btn-cta embed-copy-btn" id="copy-embed-btn">📋 Copy Code</button>
+            </div>
+
+            <!-- ═══════════════════════════════════════════════════
+                 QR CODE
+                 ═══════════════════════════════════════════════════ -->
+            <div class="qr-section" id="qr-section">
+                <h2>📱 Your <span class="highlight-gold">QR Code</span></h2>
+                <p class="section-subtitle">Print it. Sticker it. AirDrop it in public. Chaos mode. 💀</p>
+
+                <div class="qr-card">
+                    <canvas id="qr-canvas" width="200" height="200"></canvas>
+                    <p class="qr-label">Scan for Free AI Girlfriends 🔥</p>
+                </div>
+                <button class="btn-cta qr-dl-btn" id="download-qr-btn">📥 DOWNLOAD QR CODE</button>
+            </div>
+
+            <!-- CTA SECTION -->
+            <div class="recruit-section">
+                <div class="recruit-inner">
+                    <h2>You Know You Want To <span class="highlight-gold">Share This</span>.</h2>
+                    <p>420,069+ people sent here by friends who couldn't keep this to themselves. Your turn.</p>
+                    <div class="recruit-stats">
+                        <div class="recruit-stat">
+                            <span class="recruit-stat-value">420k+</span>
+                            <span class="recruit-stat-label">Users</span>
+                        </div>
+                        <div class="recruit-stat">
+                            <span class="recruit-stat-value">69M+</span>
+                            <span class="recruit-stat-label">Messages</span>
+                        </div>
+                        <div class="recruit-stat">
+                            <span class="recruit-stat-value">100%</span>
+                            <span class="recruit-stat-label">Free Forever</span>
+                        </div>
+                    </div>
+                    <button class="btn-cta" id="recruit-cta-btn"
+                        onclick="document.getElementById('share-panel')?.scrollIntoView({behavior:'smooth'})">DROP THIS
+                        IN THE GROUP CHAT 💀</button>
+                </div>
+            </div>
+
             <footer class="legal-footer-simple">
-                <p>&copy; 2026 COREFUCK - 18+ Executives Only. <a href="terms.html">Terms</a> | <a
+                <p>&copy; 2026 COREFUCK — 18+ Only. <a href="terms.html">Terms</a> | <a
                         href="privacy.html">Privacy</a></p>
+                <p class="footer-compliance">All characters are AI-generated and fictional. No real persons depicted.
+                </p>
             </footer>
         </section>
     </main>
 
     <script src="script.js"></script>
-    <script src="auto_test.js"></script>
 </body>
 
 </html>
